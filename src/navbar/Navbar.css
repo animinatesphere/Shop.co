@@ -1,0 +1,290 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.nav-bus {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  padding-top: 33px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo p {
+  font-family: Integral CF, sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+/* Hamburger Icon */
+.harmburger {
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  width: 24px;
+  height: 24px;
+  gap: 5px;
+  padding-top: 6px;
+  cursor: pointer;
+  z-index: 102;
+}
+
+.harm1 {
+  width: 20.75px;
+  height: 2.25px;
+  background: #000000;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger animation when active */
+.harm1.active:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.harm1.active:nth-child(2) {
+  opacity: 0;
+}
+
+.harm1.active:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Desktop Navigation Links */
+.nav-link {
+  flex: 1;
+  max-width: 400px;
+}
+
+.nav-link ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 24px;
+}
+
+.nav-link a {
+  list-style: none;
+  text-decoration: none;
+  font-family: Satoshi, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000000;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 377px;
+  height: 40px;
+  gap: 12px;
+  border-radius: 62px;
+  padding: 12px 16px;
+  background: #f0f0f0;
+}
+
+.search-bar input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: Satoshi, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #00000066;
+}
+
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: 20px;
+}
+
+.search-bar2 {
+  display: none;
+}
+
+/* Mobile Sidebar Menu */
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.sidebar-menu.open {
+  left: 0;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: block;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.sidebar-header p {
+  font-family: Integral CF, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.close-btn {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.sidebar-nav-links ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.sidebar-nav-links a {
+  list-style: none;
+  text-decoration: none;
+  font-family: Satoshi, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-nav-links a img {
+  margin-left: 5px;
+}
+
+.sidebar-search .search-bar {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1050px) {
+  .nav-container {
+    gap: 20px;
+  }
+
+  .search-bar {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .nav-container {
+    gap: 15px;
+  }
+
+  .search-bar {
+    max-width: 250px;
+  }
+
+  .nav-link ul {
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .harmburger {
+    display: flex;
+    margin-right: 10px;
+  }
+
+  .nav-container {
+    justify-content: space-between;
+    padding: 33px 10px 0;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .search-bar {
+    display: none;
+  }
+
+  .search-bar2 {
+    display: block;
+  }
+
+  .nav-logo {
+    flex: 1;
+  }
+
+  .nav-profile {
+    justify-content: flex-end;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-logo p {
+    font-size: 24px;
+  }
+
+  .nav-bus {
+    padding: 0 10px;
+  }
+
+  .nav-container {
+    padding-top: 25px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .nav-logo p {
+    font-size: 20px;
+  }
+}
