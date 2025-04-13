@@ -29,7 +29,7 @@ const NewArrivals = () => {
         <h2 className="section-title">NEW ARRIVALS</h2>
 
         <div className="product-grid">
-          {products.map((product) => (
+          {products.slice(0, 4).map((product) => (
             <Link
               to={`/product/${product.id}`}
               key={product.id}
