@@ -61,7 +61,9 @@ const NewArrivals = () => {
         </div>
 
         <div className="view-all-container">
-          <button className="view-all-btn">View All</button>
+          <Link to="/more-new-arrival">
+            <button className="view-all-btn">View All</button>
+          </Link>
         </div>
       </div>
     </section>
